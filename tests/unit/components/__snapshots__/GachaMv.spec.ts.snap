@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GachaMv.vue itemsの値がhtmlに出力されているか？ 1`] = `
+<div class="gacha-mv">
+  <slick-stub options="[object Object]">
+    <div class="gacha-mv-list">
+      <p class="gacha-mv-list-name">ガチャ名</p> <img>
+      <p class="gacha-mv-list-description">ガチャ説明</p>
+    </div>
+  </slick-stub>
+</div>
+`;
+
+exports[`GachaMv.vue stubしたslickがhtmlに出力されているか？ 1`] = `
+<div class="gacha-mv">
+  <div class="slick-initialized slick-slider slick-dotted"><button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="">Previous</button>
+    <div class="slick-list draggable">
+      <div class="slick-track" style="opacity: 1; width: 0px; transform: translate(0px, 0px);">
+        <div class="slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true" style="width: 0px;" tabindex="-1">
+          <div>
+            <div class="gacha-mv-list" style="width: 100%; display: inline-block;">
+              <p class="gacha-mv-list-name">ガチャ名4</p> <img>
+              <p class="gacha-mv-list-description">ガチャ説明4</p>
+            </div>
+          </div>
+        </div>
+        <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="margin-left: 0px; width: 0px;" role="tabpanel" id="slick-slide00">
+          <div>
+            <div class="gacha-mv-list" style="width: 100%; display: inline-block;">
+              <p class="gacha-mv-list-name">ガチャ名3</p> <img>
+              <p class="gacha-mv-list-description">ガチャ説明3</p>
+            </div>
+          </div>
+        </div>
+        <div class="slick-slide" data-slick-index="1" aria-hidden="true" style="width: 0px;" tabindex="-1" role="tabpanel" id="slick-slide01">
+          <div>
+            <div class="gacha-mv-list" style="width: 100%; display: inline-block;">
+              <p class="gacha-mv-list-name">ガチャ名4</p> <img>
+              <p class="gacha-mv-list-description">ガチャ説明4</p>
+            </div>
+          </div>
+        </div>
+        <div class="slick-slide slick-cloned" data-slick-index="2" id="" aria-hidden="true" style="width: 0px;" tabindex="-1">
+          <div>
+            <div class="gacha-mv-list" style="width: 100%; display: inline-block;">
+              <p class="gacha-mv-list-name">ガチャ名3</p> <img>
+              <p class="gacha-mv-list-description">ガチャ説明3</p>
+            </div>
+          </div>
+        </div>
+        <div class="slick-slide slick-cloned" data-slick-index="3" id="" aria-hidden="true" style="width: 0px;" tabindex="-1">
+          <div>
+            <div class="gacha-mv-list" style="width: 100%; display: inline-block;">
+              <p class="gacha-mv-list-name">ガチャ名4</p> <img>
+              <p class="gacha-mv-list-description">ガチャ説明4</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button>
+    <ul class="slick-dots" style="" role="tablist">
+      <li class="slick-active" role="presentation"><button type="button" role="tab" id="slick-slide-control00" aria-controls="slick-slide00" aria-label="1 of 2" tabindex="0" aria-selected="true">1</button></li>
+      <li role="presentation"><button type="button" role="tab" id="slick-slide-control01" aria-controls="slick-slide01" aria-label="2 of 2" tabindex="-1">2</button></li>
+    </ul>
+  </div>
+</div>
+`;

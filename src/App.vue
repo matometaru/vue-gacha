@@ -1,12 +1,48 @@
 <template>
   <div id="app">
+    <notifications group="errorHandler" />
+    <div id="header">
+      {{ user.stone.amount }}
+      <button @click="subStone(200)">消費</button>
+      <button @click="addStone(200)">∞課金</button>
+      こんにちは、{{ user.name }}さん
+    </div>
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/gacha-play">回す</router-link> |
+      <router-link to="/gacha-result">結果</router-link>
     </div>
     <router-view />
   </div>
 </template>
+
+<script lang="ts">
+import Vue, { PropType } from 'vue';
+import { mapState, mapActions } from 'vuex'
+// model
+import User from '@/models/User';
+import Stone from '@/models/Stone';
+// service
+import * as userService from '@/services/userService'
+
+export default Vue.extend({
+  async mounted() {
+    this.loadUser("めたる");
+  },
+  computed: {
+    ...mapState([
+      'user'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'addStone',
+      'subStone',
+      'loadUser'
+    ]),
+  },
+});
+</script>
 
 <style lang="scss">
 #app {
