@@ -7,7 +7,7 @@ import Slick from 'vue-slick';
 describe("GachaMv.vue", () => {
   it("itemsの値がhtmlに出力されているか？", () => {
     const items = [
-      new Item("ガチャ名", 3, "ガチャ説明")
+      new Item("アイテム名", 3, "アイテム説明")
     ];
     const wrapper = shallowMount(GachaMv, {
       propsData: { items }
@@ -16,8 +16,8 @@ describe("GachaMv.vue", () => {
   });
   it("slickの初期値オプション通りのhtmlに出力されているか？", async() => {
     const items = [
-      new Item("ガチャ名3", 3, "ガチャ説明3"),
-      new Item("ガチャ名4", 4, "ガチャ説明4"),
+      new Item("アイテム名3", 3, "アイテム説明3"),
+      new Item("アイテム名4", 4, "アイテム説明4"),
     ];
     const wrapper = shallowMount(GachaMv, {
       stubs: {
@@ -25,7 +25,17 @@ describe("GachaMv.vue", () => {
       },
       propsData: { items }
     });
-    console.log(wrapper.vm.$data.slickOptions.dots);
     expect(wrapper.html()).toMatchSnapshot();
+  });
+  it("pickupItemが期待通りか？", async() => {
+    const items = [
+      new Item("アイテム名3", 3, "アイテム説明3"),
+      new Item("アイテム名4", 4, "アイテム説明4"),
+      new Item("アイテム名5", 5, "アイテム説明5"),
+    ];
+    const wrapper = shallowMount(GachaMv, {
+      propsData: { items }
+    });
+    expect((wrapper.vm as any).pickupItems).toEqual([new Item("アイテム名5", 5, "アイテム説明5")]);
   });
 });

@@ -26,7 +26,7 @@ export default class GachaRepository implements GachaRepositoryIterface {
   async gachaById(id: number): Promise<Gacha> {
     const { data } = await Repository.get(`${resource}/${id}`);
 
-    return new Gacha(1, data.name, data.price, data.items);
+    return new Gacha(1, data.name, data.price, this.items(data.items));
   }
 
   // 配列をアイテムモデルに変換して返す

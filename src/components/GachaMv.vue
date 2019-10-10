@@ -3,7 +3,7 @@
     <slick ref="slick" :options="slickOptions" @reInit="reInit">
       <div v-for="(item, index) in items" :key="index" class="gacha-mv-list">
         <p class="gacha-mv-list-name">{{ item.name }}</p>
-        <img :src="item.image">
+        <p class="gacha-mv-list-rare">{{ item.rare }}</p>
         <p class="gacha-mv-list-description">{{ item.description }}</p>
       </div>
     </slick>
@@ -12,17 +12,19 @@
 
 <script lang="ts">
 import Vue, { PropType } from 'vue';
+import Gacha from '@/models/Gacha'
 import Item from '@/models/Item'
 
 // slick
 import Slick from 'vue-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
 
 export default Vue.extend({
   name: "GachaMv",
   components: { Slick },
   props: {
+    gacha: Object as PropType<Gacha>,
     items: Array as PropType<Item[]>
   },
   data() {
@@ -36,6 +38,13 @@ export default Vue.extend({
         slidesToScroll: 1,
       }
     };
+  },
+  computed: {
+    pickupItems(): Item[] {
+      return this.items.filter((item) => {
+        return item.isPickup();
+      });
+    }
   },
   watch: {
     items() {

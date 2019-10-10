@@ -8,4 +8,8 @@ export default class Item {
     this.rare = rare;
     this.description = description;
   }
+
+  isPickup(): boolean {
+    return this.rare === 5;
+  }
 }
